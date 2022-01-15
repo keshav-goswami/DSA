@@ -12,9 +12,8 @@ struct Node{
 void Iterative_preorder(Node* root){
     stack<Node*> st;
     st.push(root);
-    Node* node = st.top();
     while(!st.empty()){
-        node = st.top();
+        Node* node = st.top();
         cout<<node->data<<" ";
         st.pop();
         if(node->right) st.push(node->right);
