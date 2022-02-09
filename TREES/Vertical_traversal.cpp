@@ -11,7 +11,7 @@ struct Node{
     }
 };
 void vertical_traversal(Node* root){
-    map<int,map<int,multiset<int>>> mp;
+    map<int,map<int,vector<int>>> mp;
     queue<pair<Node*,pair<int,int>>> q;
     q.push({root,{0,0}});
     while(!q.empty()){
@@ -19,7 +19,7 @@ void vertical_traversal(Node* root){
         q.pop();
         Node* node = p.first;
         int v = p.second.first , l = p.second.second;
-        mp[v][l].insert(node->data);
+        mp[v][l].push_back(node->data);
         if(node->left){
             q.push({node->left,{v-1,l+1}});
         }
@@ -35,6 +35,7 @@ void vertical_traversal(Node* root){
         }
         ans.push_back(v);
     }
+
     for(int i=0;i<ans.size();i++){
         for(int j=0;j<ans[i].size();j++){
             cout<<ans[i][j]<<" ";
