@@ -7,7 +7,7 @@ void display(vector<int> vp){
     cout<<"[";
     for(int i=0;i<n;i++){
         cout<<vp[i];
-        if(i!=n-1) cout<<",";
+        if(i!=n-1) cout<<","; 
     }
     cout<<"]"<<endl;
 }
