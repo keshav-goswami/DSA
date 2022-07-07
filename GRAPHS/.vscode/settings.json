@@ -16,6 +16,8 @@
         "xstring": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "chrono": "cpp",
+        "utility": "cpp"
     }
 }

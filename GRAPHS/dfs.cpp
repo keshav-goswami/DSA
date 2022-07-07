@@ -1,91 +1,77 @@
-#include<bits/stdc++.h>
+// DFS ALGORITHM
+#include <bits/stdc++.h>
 using namespace std;
 
-const int N = 1e5+1;
-vector<bool> visited(N,0);
-vector<int> gf[N];
-
-void dfs(int node){
-    // inorder
-    // cout<<node<<" ";
-    visited[node] = true;
-    for(auto i=gf[node].begin();i!=gf[node].end();i++){
-        if(!visited[*i]) dfs(*i);
+void DFS_recurr(int node,vector<bool> &vis,vector<int> adj[],vector<int> &dps){
+    dps.push_back(node);
+    vis[node] = true;
+    for(auto a:adj[node]){
+        if(!vis[a]){
+            DFS_recurr(a,vis,adj,dps);
+        }
     }
-    // post order
-    // cout<<node<<" ";
 }
-int main(){
-    int v,e,S,x,y;
-    cout<<"Enter nodes and vertices: ";
-    cin>>v>>e;
-    cout<<"Enter Souce Node: ";
-    cin>>S;
-    cout<<"Enter graph nodes: ";
-    set<int> st;
-    while(e--){
-        cin>>x>>y;
-        st.insert(x); 
-        st.insert(y);
-        gf[x].push_back(y);
-        gf[y].push_back(x);
-    }
 
-    // display graph 
-
-    // cout<<endl;
-    // for(auto i:st){ 
-    //     cout<<i<<": ";
-    //     for(int j=0;j<gf[i].size();j++){
-    //         cout<<gf[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // } 
-    // return 0;
-
-// BFS
-
-    // queue<int> q;
-    // q.push(S);
-    // visited[S] = true;
-    // while(!q.empty()){
-    //     int n = q.front();
-    //     cout<<n<<" "; 
-    //     q.pop();
-    //     for(auto i = gf[n].begin();i!=gf[n].end();i++){
-    //         if(!visited[*i]){
-    //             visited[*i] = true;
-    //             q.push(*i);
-    //         }
-    //     }
-    // }
-
-// DFS using stack
-    stack<int> stk;
-    stk.push(S); //source node pushed
-    while(!stk.empty())
+// vector<int> DFS_stack(int N, vector<int> adj[])
+// {
+//     vector<int> dfs;
+//     vector<bool> visited(N+1,0);
+//     for (int i = 1; i <= N; i++)
+//     {
+//         if (!visited[i])
+//         {
+//             stack<int> st;
+//             st.push(i);
+//             visited[i] = true;
+//             while (!st.empty())
+//             {
+//                 int node = st.top();
+//                 st.pop();
+//                 dfs.push_back(node);
+//                 for (auto a : adj[node])
+//                 {
+//                     if(!visited[a]){
+//                         st.push(a);
+//                         visited[a] = true;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return dfs;
+// }
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    vector<int> res;
+    vector<bool> vis(n+1,0);
+    vector<int> adj[n + 1];
+    for (int i = 0; i < m; i++)
     {
-        int f = stk.top();
-        stk.pop();
-        if(!visited[f]){
-                visited[f] = 1;
-                cout<<f<<" ";
-        }
-        for(auto it = gf[f].begin();it!= gf[f].end();it++){
-            if(!visited[*it]){
-                stk.push(*it);
-            }
-        }
+        int u, v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
-
-    // Recursive way
-    // dfs(S);
-
+    cout<<"DFS RECURSION: ";
+    for(int i=1;i<=n;i++){
+        if(!vis[i]) DFS_recurr(i,vis,adj,res);
+    }
+    for(auto i:res) cout<<i<<" ";
+//     vector<int> ans = DFS_stack(n,adj);
+//     cout<<endl<<"DFS PATH: "<<endl;
+//     for(auto i:ans) cout<<i<<" ";
+//     return 0;
 }
-// input graph 
-// 1 4
+// Time Compexity: O(N+E)
+// Space Compexity: O(N+E)
+
+// INPUT 
+// 7 6
 // 1 2
-// 2 5
-// 4 5
-// 2 3
-// 5 6
+// 2 4
+// 2 7
+// 3 5
+// 4 6
+// 6 7
