@@ -12,7 +12,6 @@ void Topological(int i,vector<int> &vis,stack<int> &st,vector<int> adj[]){
             Topological(a,vis,st,adj);
         }
     }
-
     st.push(i);
 }
 int main(){
