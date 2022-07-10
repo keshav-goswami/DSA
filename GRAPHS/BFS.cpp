@@ -25,6 +25,8 @@ vector<int> BFS(int N,vector<int> adj[]){
     }
     return bfs;
 }
+
+
 int main(){
     int n,m;
     cin>>n>>m;

@@ -41,7 +41,7 @@ int main(){
         }
         cout<<endl;
     } 
-    return 0;
+
 
 // BFS
 
@@ -80,8 +80,11 @@ int main(){
 
     // Recursive way
     // dfs(S);
+    return 0;
 
 }
+
+
 // input graph 
 // 1 4
 // 1 2

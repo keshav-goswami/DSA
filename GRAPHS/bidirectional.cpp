@@ -11,7 +11,7 @@ void BFS(list<int> *queue, bool *visited,int *parent)
 	int current = queue->front();
 	queue->pop_front();
 	list<int>::iterator i;
-	for (i=adj[current].begin();i != adj[current].end();i++)
+	for (i = adj[current].begin();i != adj[current].end();i++)
 	{
 		if (!visited[*i])
 		{
@@ -118,17 +118,17 @@ int main()
 	return 0;
 }
 // input 
-	// 0 4
-	// 1 4
-	// 2 5
-	// 3 5
-	// 4 6
-	// 5 6
-	// 6 7
-	// 7 8
-	// 8 9
-	// 8 10
-	// 9 11
-	// 9 12
-	// 10 13 
-	// 10 14
+// 0 4
+// 1 4
+// 2 5
+// 3 5
+// 4 6
+// 5 6
+// 6 7
+// 7 8
+// 8 9
+// 8 10
+// 9 11
+// 9 12
+// 10 13 
+// 10 14
