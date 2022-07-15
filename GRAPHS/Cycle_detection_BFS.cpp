@@ -1,4 +1,4 @@
-// Detect a cycle in Graph using BFS
+// Detect a cycle(UNDIRECTED) in Graph using BFS
 #include<bits/stdc++.h>
 using namespace std;
 

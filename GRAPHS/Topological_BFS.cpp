@@ -1,5 +1,9 @@
 // (Kahn's Algorithm) // It is different from DFS approach, here we will use Indegree and visited array and will push only those elements (nodes) in queue with indegree == 0
 
+// INDEGREE : MEANS NUMBER OF PARENTS A NODE HAVE If Indegree == 0 that means No existing Parents pf that node....
+// So , here we are just taking nodes with zero indegree and after popping them from queue, we make sure that we reduce the indegree of its childs.....
+
+// Key point : unlike dfs topo we won't pass nodes in loop from main, just call it one time.
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> Topological(int N,vector<int> adj[]){

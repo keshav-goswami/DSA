@@ -1,5 +1,9 @@
-// The Intiution Behind this is to use Kahn's algo of topological sort. As we kknow we can only find topological order for Directed Acyclic graphs So we can use this to find whether a graph is cyclic or not...
+// The Intiution Behind this is to use Kahn's algo of topological sort. As we know we can only find topological order for Directed Acyclic graphs So we can use this to find whether a graph is cyclic or not...
 // We will just count the elements in resultant topological order if it is equal to number of nodes thn we got the topological sort ,Hence it is acyclic otherwise cyclic.....
+
+
+// INDEGREE : MEANS NUMBER OF PARENTS A NODE HAVE If Indegree == 0 that means No existing Parents pf that node....
+// So , here we are just taking nodes with zero indegree and after popping them from queue, we make sure that we reduce the indegree of its childs.....
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -13,6 +17,7 @@ bool Topological_Bfs(int n,vector<int> adj[]){
             indegree[a]++;
         }
     }
+    // Pushing element into queue with indegree zero
     for(int i=1;i<=n;i++){
         if(!indegree[i]) q.push(i);
     }

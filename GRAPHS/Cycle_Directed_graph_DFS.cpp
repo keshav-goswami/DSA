@@ -1,4 +1,4 @@
-// Cycle Detection in a Directed Graph
+// Cycle Detection in a Directed Graph using DFS
 #include<bits/stdc++.h>
 using namespace std;
 bool cycle_dfs(int i,vector<int> &vis,vector<int> &dfs,vector<int> adj[]){
