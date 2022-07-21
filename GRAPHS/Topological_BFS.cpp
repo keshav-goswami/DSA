@@ -4,6 +4,7 @@
 // So , here we are just taking nodes with zero indegree and after popping them from queue, we make sure that we reduce the indegree of its childs.....
 
 // Key point : unlike dfs topo we won't pass nodes in loop from main, just call it one time.
+
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> Topological(int N,vector<int> adj[]){
