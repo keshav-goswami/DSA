@@ -55,7 +55,6 @@ int main(){
     while(!pq.empty()){
         // Finding minimum distance node and its minimum distance value
         int node = pq.top().second;
-        cout<<pq.top().first<<" "<<node<<endl;
         pq.pop();
         if(MST[node]) continue;
         // cout<<pq.top().first<<endl;
