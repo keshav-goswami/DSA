@@ -1,13 +1,12 @@
 // Undirected Graph
 // Dijksta's Algorith....
 // Use a Priority queue and insert distance and node in it and keep on iterating on these nodes with shortest distance using queue(same as bfs).
-
 #include <bits/stdc++.h>
 using namespace std;
 void Dijkstra(int n, vector<pair<int, int>> adj[], int src)
 {
     vector<int> dis(n + 1, INT_MAX);
-    priority_queue<pair<int, int>> pq;
+    priority_queue<pair<int, int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
     pq.push({0, src});
     dis[src] = 0;
     while (!pq.empty()){
