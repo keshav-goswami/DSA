@@ -38,10 +38,14 @@ int main(){
     Union(4,5);
     Union(6,7);
     Union(5,6);
+    cout<<"PARENT ARRAY: ";
+    for(int i=0;i<8;i++) cout<<findParent(i)<<" ";
+    cout<<"\nRANK ARRAY: ";
+    for(int i=0;i<8;i++) cout<<ranks[i]<<" ";
     if(findParent(1) != findParent(7)){
-        cout<<"Different Components";
+        cout<<"\nDifferent Components";
     }else{
-        cout<<"Connected Commponents";
+        cout<<"\nConnected Commponents";
     }
     return 0;
 }
