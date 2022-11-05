@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "utility": "cpp",
+        "iostream": "cpp",
+        "queue": "cpp",
+        "algorithm": "cpp",
+        "xtree": "cpp",
+        "ostream": "cpp",
+        "random": "cpp"
+    }
+}
